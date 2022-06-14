@@ -33,10 +33,14 @@ exports.handler = async (event) => {
 
   // Handle /foo Command
   if (body.data.name == 'foo') {
-    return JSON.stringify({  // Note the absence of statusCode
+   const bodyString = JSON.stringify({  // Note the absence of statusCode
       "type": 4,  // This type stands for answer with invocation shown
       "data": { "content": "bar" }
     })
+    return {
+      statusCode: 200,
+      body : bodyString
+    }
   }
 
   return {
