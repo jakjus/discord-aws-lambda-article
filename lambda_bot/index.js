@@ -1,6 +1,7 @@
 const nacl = require('tweetnacl');
 
 exports.handler = async (event) => {
+  console.log(event)
   // Checking signature (requirement 1.)
   // Your public key can be found on your application in the Developer Portal
   const PUBLIC_KEY = process.env.PUBLIC_KEY;
